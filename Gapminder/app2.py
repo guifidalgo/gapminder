@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 
-df = pd.read_csv('https://github.com/guifidalgo/gapminder/blob/main/Gapminder/gapminder.csv')
+df = pd.read_csv('Gapminder/gapminder.csv')
+
 st.set_page_config(page_title='Gapminder', page_icon=':earth_americas:', layout='wide')
 
 df_continents = df.groupby(['continent', 'year']).agg({'gdpPercap': 'mean', 'lifeExp': 'mean', 'pop': 'sum'}).reset_index()
